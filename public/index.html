@@ -50,29 +50,32 @@
 		</section>
 		<section class="weather-form-holder">
 			<form action="" class="weather-form">
-				<input id="google-autocomplete" placeholder="Add another place" onFocus="geolocate()" type="text" class="weather-form__input" autocomplete=off></input>
+				<input id="weather-search-input" placeholder="Add another place" onFocus="geolocate()" type="text" class="weather-form__input" autocomplete=off></input>
 			</form>
 		</section>
 	</section>
    
    
+    <script
+			  src="http://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
    
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4BNRTEnz1KRowjyWQAezIvaFsB5U7Sr4 &signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4BNRTEnz1KRowjyWQAezIvaFsB5U7Sr4&signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
    	
    	<script>
-		var placeSearch, autocomplete;
+		let autocomplete;
 
 		function initAutocomplete() {
 			autocomplete = new google.maps.places.Autocomplete(
-				(document.getElementById('google-autocomplete')),
+				(document.getElementById('weather-search-input')),
 				{types: ['geocode']}
 			);
 		}
-		initAutocomplete();
-
+		
 		function geolocate() {
 			if (navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(function(position) {
+				navigator.geolocation.watchPosition(function(position) {
 					var geolocation = {
 						lat: position.coords.latitude,
 						lng: position.coords.longitude
@@ -81,7 +84,21 @@
 						center: geolocation,
 						radius: position.coords.accuracy
 					});
+					console.log('using geolocation')
 					autocomplete.setBounds(circle.getBounds());
+				}, function(error) {
+					$.get("http://ipinfo.io", function(response) { 
+					var geolocation = {
+						lat: parseFloat(response.loc.split(',')[0]),
+						lng: parseFloat(response.loc.split(',')[1])
+					};
+					var circle = new google.maps.Circle({
+						center: geolocation,
+						radius: 100
+					});
+					console.log('using ipinfo')
+					autocomplete.setBounds(circle.getBounds());
+				}, "jsonp");
 				});
 			}
 		}
