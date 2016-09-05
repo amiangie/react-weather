@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700);
+
+::selection { 
+	background: $light-grey; 
+	color: #fff;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+body {
+	background: $white;
+	color: #000;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.weather-app {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: stretch;
+}
+.weather-panels,
+.weather-form-holder {
+	flex: 0 0 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.weather-form-holder {
+	border-left: 1px solid $light-grey;
+}

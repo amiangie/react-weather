@@ -1,3 +1,23 @@
 @import 
-	"test"
+	// global settings
+	"settings.variables",
+	
+	// normalisation
+	"generic.normalize",
+	"generic.reset",
+	
+	// common styles
+	"common.form",
+	"common.layout",
+	"common.typo",
+	
+	// blocks
+	"block.weather-panel",
+	
+	// components
+	
+	
+	// mobile
+	"mobile"
 	;
+

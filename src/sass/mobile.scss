@@ -1,0 +1,46 @@
+@media screen and (max-width: 900px) {
+	.weather-app {
+		flex-direction: column;
+		height: auto;
+	}
+	.weather-panels,
+	.weather-form-holder {
+		flex: 0 0 100%;
+	}
+	.weather-panels {
+		order: 2;
+		flex: 0 0 80%;
+	}
+	.weather-panel {
+		width: 80%;
+		margin: 0 auto;
+		justify-content: flex-start;
+	}
+	.weather-form-holder {
+		order: 1;
+		padding: 40px 0;
+		margin-bottom: 40px;
+		background: #000;
+	}
+	.weather-form__input {
+		background: #000;
+		color: $white;
+		border-bottom-color: $white;
+	}
+	::-webkit-input-placeholder {
+		opacity: 1;
+		color: $white;
+	}
+	:-moz-placeholder {
+		opacity: 1;
+		color: $white;
+	}
+	::-moz-placeholder {
+		opacity: 1;
+		color: $white;
+	}
+	:-ms-input-placeholder {  
+		opacity: 1;
+		color: $white;
+	}
+}

@@ -1,0 +1,21 @@
+.weather-panel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 0;
+	+ .weather-panel {
+		border-top: 1px solid $light-grey;
+	}
+}
+.weather-panel-icon {
+	padding: 20px;
+	i {
+		font-size: 4em;
+	}
+}
+.weather-panel-info {
+	padding: 20px;
+}
+.weather-panel__title {
+	margin-bottom: 0.1em;
+}

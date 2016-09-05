@@ -2,13 +2,91 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Babel with Gulp</title>
+	<title>React Weather app</title>
+	<link rel="stylesheet" href="assets/css/weather-icons.min.css" />
 	<link rel="stylesheet" href="assets/css/global.css" />
 	<script>console.time('react-app')</script>
 </head>
 <body>
-	<h1>plz work</h1>
-	<div id="comment-box"></div>
-    <script src="assets/js/bundle.js"></script>
+	
+	<section class="weather-app" id="weather-app">
+		<section class="weather-panels">
+			<article class="weather-panel">
+				<div class="weather-panel-icon">
+					<i class="wi wi-day-sunny"></i>
+				</div>
+				<div class="weather-panel-info">
+					<h1 class="weather-panel__title">Tallinn</h1>
+					<p>
+						<span class="weather-panel__temp">+20</span> | 
+						<span class="weather-panel__desc">sunny</span>
+					</p>
+				</div>
+			</article>
+			<article class="weather-panel">
+				<div class="weather-panel-icon">
+					<i class="wi wi-day-sunny"></i>
+				</div>
+				<div class="weather-panel-info">
+					<h1 class="weather-panel__title">Tallinn</h1>
+					<p>
+						<span class="weather-panel__temp">+20</span> | 
+						<span class="weather-panel__desc">sunny</span>
+					</p>
+				</div>
+			</article>
+			<article class="weather-panel">
+				<div class="weather-panel-icon">
+					<i class="wi wi-day-sunny"></i>
+				</div>
+				<div class="weather-panel-info">
+					<h1 class="weather-panel__title">Tallinn</h1>
+					<p>
+						<span class="weather-panel__temp">+20</span> | 
+						<span class="weather-panel__desc">sunny</span>
+					</p>
+				</div>
+			</article>
+		</section>
+		<section class="weather-form-holder">
+			<form action="" class="weather-form">
+				<input id="google-autocomplete" placeholder="Add another place" onFocus="geolocate()" type="text" class="weather-form__input" autocomplete=off></input>
+			</form>
+		</section>
+	</section>
+   
+   
+   
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4BNRTEnz1KRowjyWQAezIvaFsB5U7Sr4 &signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
+   	
+   	<script>
+		var placeSearch, autocomplete;
+
+		function initAutocomplete() {
+			autocomplete = new google.maps.places.Autocomplete(
+				(document.getElementById('google-autocomplete')),
+				{types: ['geocode']}
+			);
+		}
+		initAutocomplete();
+
+		function geolocate() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function(position) {
+					var geolocation = {
+						lat: position.coords.latitude,
+						lng: position.coords.longitude
+					};
+					var circle = new google.maps.Circle({
+						center: geolocation,
+						radius: position.coords.accuracy
+					});
+					autocomplete.setBounds(circle.getBounds());
+				});
+			}
+		}
+	</script>
+	
+	<script src="assets/js/bundle.js"></script>
 </body>
 </html>
