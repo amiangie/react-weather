@@ -3,23 +3,15 @@
 		flex-direction: column;
 		height: auto;
 	}
-	.weather-panels,
-	.weather-form-holder {
-		flex: 0 0 100%;
-	}
 	.weather-panels {
 		order: 2;
-		flex: 0 0 80%;
 	}
 	.weather-panel {
-		width: 80%;
-		margin: 0 auto;
 		justify-content: flex-start;
 	}
 	.weather-form-holder {
 		order: 1;
 		padding: 40px 0;
-		margin-bottom: 40px;
 		background: #000;
 	}
 	.weather-form__input {
@@ -42,5 +34,15 @@
 	:-ms-input-placeholder {  
 		opacity: 1;
 		color: $white;
+	}
+}
+@media screen and (max-width: 600px) {
+	h1 {
+		font-size: calc(1em + 1vw);
+	}
+	.weather-panel-icon {
+		i {
+			font-size: 3em;
+		}
 	}
 }

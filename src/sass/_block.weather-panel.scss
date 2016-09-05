@@ -2,9 +2,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 10px 0;
+	padding: 10px;
 	+ .weather-panel {
 		border-top: 1px solid $light-grey;
+	}
+	&:only-of-type .weather-panel__remove {
+		display: none;
 	}
 }
 .weather-panel-icon {
@@ -14,8 +17,18 @@
 	}
 }
 .weather-panel-info {
+	flex: 1 0 auto;
 	padding: 20px;
 }
 .weather-panel__title {
+	display: inline-block;
 	margin-bottom: 0.1em;
+}
+.weather-panel__remove {
+	&:before {
+		content: "×";
+	}
+	color: $dark-grey;
+	align-self: flex-end;
+	text-decoration: none;
 }
