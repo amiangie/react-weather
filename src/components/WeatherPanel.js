@@ -34,15 +34,17 @@ export default class WeatherPanel extends React.Component {
 		});
 	}
 	
-	_handleRemove() {
-		
+	_handleRemove(e) {
+		e.preventDefault();
+		this.props.onDelete(this.props.id);
 	}
 	
 	render() { 
 		return(
 			<article className="weather-panel">
 				{ this._renderPanelContents() }
-				<a href="" className="weather-panel__remove">
+				<a href="" className="weather-panel__remove"
+					onClick={this._handleRemove.bind(this)} >
 					<span className="visuallyhidden">remove</span>
 				</a>
 			</article>
