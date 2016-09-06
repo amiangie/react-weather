@@ -39,6 +39,7 @@ export default class WeatherApp extends React.Component {
 		}	
 	}
 	
+	// todo: move this method to utils
 	_getGeolocationCoords() {
 		return new Promise(function(resolve, reject){
 			let coords = {};
@@ -93,18 +94,19 @@ export default class WeatherApp extends React.Component {
 	
 	_getWeatherPanels() {
 		return this.state.locations.map((location) => {
-			return(
-				<WeatherPanel id="{location.id}"></WeatherPanel>
-			);
+			return <WeatherPanel id={location.id}
+			 					 key={location.id}
+								 lat={location.coords.lat}
+								 lng={location.coords.long} />
 		});
 	}
 	
 	render() { 
-//		const weatherPanels = this._getWeatherPanels();
+		const weatherPanels = this._getWeatherPanels();
 		return(
 			<div className="weather-app">
 				<section className="weather-panels">
-
+					{weatherPanels}
 				</section>
 				<section className="weather-form-holder">
 					<WeatherSearchForm></WeatherSearchForm>

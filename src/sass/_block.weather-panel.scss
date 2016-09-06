@@ -1,13 +1,13 @@
 .weather-panel {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	position: relative;
 	padding: 10px;
 	+ .weather-panel {
 		border-top: 1px solid $light-grey;
 	}
-	&:only-of-type .weather-panel__remove {
-		display: none;
+	> div {
+		display: flex;
+		justify-content: center;
+		align-items: center;	
 	}
 }
 .weather-panel-icon {
@@ -27,7 +27,11 @@
 .weather-panel__remove {
 	&:before {
 		content: "×";
+		font-size: 1.5em;
 	}
+	position: absolute;
+	right: 10px;
+	top: 10px;
 	color: $dark-grey;
 	align-self: flex-end;
 	text-decoration: none;
