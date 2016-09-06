@@ -77,8 +77,16 @@ export default class WeatherApp extends React.Component {
 		});
 	}
 	
-	_addLocation() {
-		// ...
+	_addLocation(locationCoords) {
+		const location = {
+			id: this.state.locations.length + 1,
+			coords: locationCoords
+		};
+
+		this.setState({
+			locations: this.state.locations.concat([location])
+		});
+		
 		this._saveState();
 	}
 	
@@ -109,7 +117,7 @@ export default class WeatherApp extends React.Component {
 					{weatherPanels}
 				</section>
 				<section className="weather-form-holder">
-					<WeatherSearchForm></WeatherSearchForm>
+					<WeatherSearchForm addLocation={this._addLocation.bind(this)}></WeatherSearchForm>
 				</section>
 			</div>
 		); 

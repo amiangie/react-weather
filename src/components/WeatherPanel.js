@@ -18,7 +18,7 @@ export default class WeatherPanel extends React.Component {
 	
 	componentDidMount() {
 		// subscribe to updates once in 5 min	
-		WeatherData.subscribeToWeather();
+//		WeatherData.subscribeToWeather();
 //		WeatherData.subscribeToWeather(this.props.lat, this.props.lng, this._onChange());
 	}
 	
