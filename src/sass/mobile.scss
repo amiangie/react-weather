@@ -14,7 +14,8 @@
 		padding: 40px 0;
 		background: #000;
 	}
-	.weather-form__input {
+	.weather-form__input,
+	.geosuggest__input {
 		background: #000;
 		color: $white;
 		border-bottom-color: $white;

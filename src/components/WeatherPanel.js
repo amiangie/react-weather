@@ -66,8 +66,7 @@ export default class WeatherPanel extends React.Component {
 				<div className="weather-panel-info">
 					<h1 className="weather-panel__title">{weather.locationName}</h1>
 					<p>
-						<span className="weather-panel__temp">{weather.temperature}</span> | 
-						<span className="weather-panel__desc">{weather.description}</span>
+						<span className="weather-panel__temp">{parseInt(weather.temperature)}°</span> | <span className="weather-panel__desc">{weather.description}</span>
 					</p>
 				</div>
 			</div>

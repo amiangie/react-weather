@@ -23,7 +23,7 @@ export default class WeatherApp extends React.Component {
 		if(!data.length) {
 			this._getGeolocationCoords().then((geoCoords) => {
 				const locationItem = {
-					id: 1,
+					id: this._generateId(),
 					coords: geoCoords
 				}
 				this.setState({
@@ -79,7 +79,7 @@ export default class WeatherApp extends React.Component {
 	
 	_addLocation(locationCoords) {
 		const location = {
-			id: this.state.locations.length + 1,
+			id: this._generateId(),
 			coords: locationCoords
 		};
 
@@ -105,6 +105,10 @@ export default class WeatherApp extends React.Component {
 	_saveState() {
 		localStorage.removeItem('WeatherLocations');
 		localStorage.setItem('WeatherLocations', JSON.stringify(this.state.locations));
+	}
+	
+	_generateId() {
+		return (new Date().getTime()).toString(36);
 	}
 	
 	_getWeatherPanels() {
