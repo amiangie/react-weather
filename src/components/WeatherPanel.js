@@ -10,21 +10,8 @@ export default class WeatherPanel extends React.Component {
 		};
 	}
 	
-	componentWillMount() {
-		// get information based on lat/lng:
-		// name, temperature, text, icon
-//		this._getL
-	}
-	
 	componentDidMount() {
-		// subscribe to updates once in 5 min	
-//		WeatherData.subscribeToWeather();
-//		WeatherData.subscribeToWeather(this.props.lat, this.props.lng, this._onChange());
-	}
-	
-	componentWillUnmount() {
-		// unsubscrive from weather updates
-		
+		WeatherData._getWeather(this.props.lat, this.props.lng, this._onChange.bind(this));
 	}
 	
 	_onChange(state) {
@@ -70,16 +57,17 @@ export default class WeatherPanel extends React.Component {
 	
 	_renderWeather() {
 		let weather = this.state.weather;
+		let iconClass = `wi wi-owm-${weather.icon}`;
 		return(
 			<div>
 				<div className="weather-panel-icon">
-					<i className="wi wi-day-sunny"></i>
+					<i className={iconClass}></i>
 				</div>
 				<div className="weather-panel-info">
-					<h1 className="weather-panel__title">Tallinn</h1>
+					<h1 className="weather-panel__title">{weather.locationName}</h1>
 					<p>
-						<span className="weather-panel__temp">+20</span> | 
-						<span className="weather-panel__desc">sunny</span>
+						<span className="weather-panel__temp">{weather.temperature}</span> | 
+						<span className="weather-panel__desc">{weather.description}</span>
 					</p>
 				</div>
 			</div>

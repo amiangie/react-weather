@@ -19,8 +19,6 @@ export default class WeatherSearchForm extends React.Component {
 				<Geosuggest 
 					placeholder="Add another place"
 					onSuggestSelect={this.onSuggestSelect.bind(this)}
-					location={new google.maps.LatLng(53.558572, 9.9278215)}
-          			radius='20'
 					/>
 			</form>
 		); 

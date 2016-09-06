@@ -94,7 +94,7 @@ export default class WeatherApp extends React.Component {
 		const filteredLocations = this.state.locations.filter(
 			location => location.id != id
 		);
-
+		
 		this.setState({ 
 			locations: filteredLocations
 		});
@@ -103,7 +103,7 @@ export default class WeatherApp extends React.Component {
 	}
 	
 	_saveState() {
-		console.log(this.state.locations)
+		localStorage.removeItem('WeatherLocations');
 		localStorage.setItem('WeatherLocations', JSON.stringify(this.state.locations));
 	}
 	
@@ -112,7 +112,7 @@ export default class WeatherApp extends React.Component {
 			return <WeatherPanel id={location.id}
 			 					 key={location.id}
 								 lat={location.coords.lat}
-								 lng={location.coords.long}
+								 lng={location.coords.lng}
 								 onDelete={this._removeLocation.bind(this)}/>
 		});
 	}
