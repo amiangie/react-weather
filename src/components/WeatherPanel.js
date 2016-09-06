@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class WeatherPanelsList extends React.Component {
+export default class WeatherPanel extends React.Component {
 	render() { 
 		return(
 			<article className="weather-panel">
