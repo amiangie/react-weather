@@ -3,9 +3,6 @@
 	width: 80%;
 	margin: 0 auto;
 }
-.geosuggest__input-wrapper {
-
-}
 .geosuggest__input {
 	display: block;
 	width: 100%;
@@ -58,5 +55,9 @@
 		display: block;
 		background: url(pin.svg);
 		background-size: cover;
+	}
+	&:hover,
+	&:focus {
+		color: cadetblue;
 	}
 }
