@@ -32,6 +32,9 @@ body {
 	flex-direction: column;
 	justify-content: center;
 }
+.weather-panels-holder {
+	overflow-y: auto;
+}
 .weather-form-holder {
 	border-left: 1px solid $light-grey;
 }

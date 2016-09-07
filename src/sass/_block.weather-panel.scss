@@ -12,15 +12,17 @@
 }
 .weather-panel-icon {
 	padding: 20px;
+	flex: 0 0 15%;
 	i {
 		font-size: 4em;
 	}
 }
 .weather-panel-info {
-	flex: 1 0 auto;
 	padding: 20px;
+	flex: 0 0 75%;
 }
 .weather-panel__title {
+	word-wrap: break-word;
 	display: inline-block;
 	margin-bottom: 0.1em;
 }

@@ -86,7 +86,9 @@ export default class WeatherApp extends React.Component {
 		return(
 			<div className="weather-app">
 				<section className="weather-panels">
-					{weatherPanels}
+					<div className="weather-panels-holder">
+						{weatherPanels}
+					</div>
 				</section>
 				<section className="weather-form-holder">
 					<WeatherSearchForm addLocation={this._addLocation.bind(this)}></WeatherSearchForm>
