@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import WeatherPanel from './WeatherPanel';
 import WeatherSearchForm from './WeatherSearchForm';
 import LocationData from '../utils/LocationData';
