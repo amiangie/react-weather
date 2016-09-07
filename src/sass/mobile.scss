@@ -44,8 +44,16 @@
 		font-size: calc(1em + 1vw);
 	}
 	.weather-panel-icon {
+		padding-left: 0;
 		i {
 			font-size: 3em;
 		}
+	}
+	.geosuggest {
+		width: 90%;
+	}
+	.geosuggest__input {
+		font-size: 1.9em;
+		border-radius: 0;
 	}
 }
