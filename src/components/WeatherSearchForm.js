@@ -8,8 +8,8 @@ export default class WeatherSearchForm extends React.Component {
 			lat: suggest.location.lat,
 			lng: suggest.location.lng
 		};
-		
 		this.props.addLocation(newLocationCoords);
+		this.refs.geosuggest.clear();
 	}
 
 	
@@ -17,6 +17,7 @@ export default class WeatherSearchForm extends React.Component {
 		return(
 			<form className="weather-form">
 				<Geosuggest 
+					ref="geosuggest"
 					placeholder="Add another place"
 					onSuggestSelect={this.onSuggestSelect.bind(this)}
 					/>
