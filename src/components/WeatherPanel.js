@@ -56,7 +56,7 @@ export default class WeatherPanel extends React.Component {
 	}
 	
 	_renderWeather() {
-		let weather = this.state.weather;
+		const weather = this.state.weather;
 		let iconClass = `wi wi-owm-${weather.icon}`;
 		return(
 			<div>

@@ -91,19 +91,18 @@ export default class WeatherApp extends React.Component {
 	}
 	
 	_removeLocation(id) {
-		const filteredLocations = this.state.locations.filter(
-			location => location.id != id
+		const locations = this.state.locations.filter(
+			location => location.id !== id
 		);
 		
 		this.setState({ 
-			locations: filteredLocations
+			locations: locations
+		}, function() {
+			this._saveState();
 		});
-		
-		this._saveState();
 	}
 	
 	_saveState() {
-		localStorage.removeItem('WeatherLocations');
 		localStorage.setItem('WeatherLocations', JSON.stringify(this.state.locations));
 	}
 	
