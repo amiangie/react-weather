@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import WeatherPanel from './WeatherPanel';
 import WeatherSearchForm from './WeatherSearchForm';
-//import LocData from '../utils/LocData';
+import LocationData from '../utils/LocationData';
 
 export default class WeatherApp extends React.Component {
 	
@@ -21,7 +21,7 @@ export default class WeatherApp extends React.Component {
 		const data = JSON.parse(localStorage.getItem('WeatherLocations')) || [];
 		
 		if(!data.length) {
-			this._getGeolocationCoords().then((geoCoords) => {
+			LocationData._getGeolocationCoords().then((geoCoords) => {
 				const locationItem = {
 					id: this._generateId(),
 					coords: geoCoords
@@ -37,44 +37,6 @@ export default class WeatherApp extends React.Component {
 				locations: data
 			});
 		}	
-	}
-	
-	// todo: move this method to utils
-	_getGeolocationCoords() {
-		return new Promise(function(resolve, reject){
-			let coords = {};
-			if (navigator.geolocation) {
-				// trying to use browser geolocation
-				navigator.geolocation.getCurrentPosition(
-					function resolveLocation(position) {
-						coords = {
-							lat: position.coords.latitude,
-							lng: position.coords.longitude
-						};
-						resolve(coords);
-					},
-					function resolveLocationError(error) {
-						// some error like user doesn't want to share location.
-						// nice try, user!
-						axios.get('http://ipinfo.io')
-							.then(function(response) { 
-								coords = {
-									lat: parseFloat(response.data.loc.split(',')[0]),
-									lng: parseFloat(response.data.loc.split(',')[1])
-								};
-								resolve(coords);
-							})
-							.catch(function(error){
-								console.log(error);
-							});
-					}
-				);
-			}
-			else {
-				// falling back to ipinfo
-				// todo: add ipinfo here as well
-			}
-		});
 	}
 	
 	_addLocation(locationCoords) {
