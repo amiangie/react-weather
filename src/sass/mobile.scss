@@ -3,6 +3,8 @@
 		flex-direction: column;
 	}
 	.weather-panels {
+		flex: 1 0 auto;
+		justify-content: flex-start;
 		order: 2;
 	}
 	.weather-panel {
