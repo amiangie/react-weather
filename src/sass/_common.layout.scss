@@ -34,6 +34,7 @@ body {
 }
 .weather-panels-holder {
 	overflow-y: auto;
+	overflow-x: hidden;
 }
 .weather-form-holder {
 	border-left: 1px solid $light-grey;
