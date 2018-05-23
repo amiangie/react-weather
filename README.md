@@ -4,28 +4,30 @@
 <p align="center">
   <a href="#intro">Learn more ></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://noel-noel.me/react-weather">Try now ></a>
 </p>
-![desktop version](https://cloud.githubusercontent.com/assets/21953550/18322936/e23a6312-753d-11e6-9c2d-95ca1185d653.png)
+<img src="https://cloud.githubusercontent.com/assets/21953550/18322936/e23a6312-753d-11e6-9c2d-95ca1185d653.png" width="100%" align="center">
 
 <p id="intro"><b>YARWA</b> (pronounced <i>yarrr-wa</i>) is a simple weather app built with React. Featuring clean and simple design it provides a way to check weather for any place on Earth with minimum user involvement. Once you open the page you don't have to do anything: YARWA gets your location via HTML5 <b>Geolocation API</b> - or, if it is not available, falls back to <a href="http://ipinfo.io/"><b>ipinfo</b></a> - and shows you current weather from <a href="http://openweathermap.org/"><b>OpenWeatherMap</b></a>. </p>
 <br><br>
 <img src="https://cloud.githubusercontent.com/assets/21953550/18325338/83000800-7549-11e6-88f8-007f2782ee27.png" width="60%" align="right">
 <p><br><br>Of course, you are not restricted to just one place: feel free to add more locations. Intelligent <a href="https://developers.google.com/maps/documentation/javascript/places-autocomplete"><b>Google places autocomplete</b></a> will make this process easy as never before. And don't worry about adding them back again next time: app will save the state to <b>localStorage</b> and restore everything for you when you come back.</p>
 <br><br><br><br>
-For all the tech geeks out there: YARWA is packed with all kinds of stuff. It's written in ES2015, using **[Babel](https://babeljs.io/)** and **[babel-polyfill](http://babeljs.io/docs/usage/polyfill/)** to compile it to well-supported ES5. Styles are written accordingly to **[BEM](http://getbem.com/)** guidelines in **[Sass](http://sass-lang.com/)** with **[Autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer)** taking care of vendor prefixes. Everything is compiled, bundled, and served to browser in real-time with **[Gulp](http://gulpjs.com/)** with help of **[Browserify](http://browserify.org/)**, **[watchify](https://github.com/substack/watchify)** and some other plugins.
+For all the tech geeks out there: YARWA is packed with all kinds of stuff. It's written in ES2015, using <b><a href="https://babeljs.io/">Babel</a></b> and <b><a href="http://babeljs.io/docs/usage/polyfill/">babel-polyfill</a></b> to compile it to well-supported ES5. Styles are written accordingly to <b><a href="http://getbem.com/">BEM</a></b> guidelines in <b><a href="http://sass-lang.com/">Sass</a></b> with <b><a href="https://www.npmjs.com/package/gulp-autoprefixer">Autoprefixer</a></b> taking care of vendor prefixes. Everything is compiled, bundled, and served to browser in real-time with <b><a href="http://gulpjs.com/">Gulp</a></b> with help of <b><a href="http://browserify.org/">Browserify</a></b>, <b><a href="https://github.com/substack/watchify">watchify</a></b> and some other plugins.
 <br><br><br><br>
 <img src="https://cloud.githubusercontent.com/assets/21953550/18323983/cea04ff6-7542-11e6-883e-6d2c28fb6150.png" width="70%" align="left">
 <p align="right"><br>As a finishing touch, app's <b>responsive design</b> works great on any device of any size providing a smooth user experience. </p>
 <br><br><br><br><br><br><br><br><br>
 
 <h2 align="center">Try it out now:</h2>
-### Install:
-- `git clone git@github.com:noel-noel/react-weather.git`
-- `cd /react-weather`
-- `npm install`
-- `npm start`
+<h3>Install:</h3>
+<pre>
+git clone git@github.com:noel-noel/react-weather.git
+cd /react-weather
+npm install
+npm start
+</pre>
 
 ### Try online:
-**[react-weather](http://noel-noel.me/react-weather)**
+<b><a href="http://noel-noel.me/react-weather">react-weather</a></b>
 
 <br><br>
 <p align="right">xoxo <br>
