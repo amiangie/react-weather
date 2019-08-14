@@ -2,7 +2,7 @@
 <p align="center">Any location on Earth. Any device.</p>
 <p align="center">One app.</p>
 <p align="center">
-  <a href="#intro">Learn more ></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://noel-noel.me/react-weather">Try now ></a>
+  <a href="#intro">Learn more ></a>
 </p>
 <img src="https://cloud.githubusercontent.com/assets/21953550/18322936/e23a6312-753d-11e6-9c2d-95ca1185d653.png" width="100%" align="center">
 
@@ -20,14 +20,12 @@ For all the tech geeks out there: YARWA is packed with all kinds of stuff. It's 
 <h2 align="center">Try it out now:</h2>
 <h3>Install:</h3>
 <pre>
-git clone git@github.com:noel-noel/react-weather.git
+git clone git@github.com:amiangie/react-weather.git
 cd /react-weather
 npm install
 npm start
 </pre>
 
-### Try online:
-<b><a href="http://noel-noel.me/react-weather">react-weather</a></b>
 
 <br><br>
 <p align="right">xoxo <br>
